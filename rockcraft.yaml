@@ -21,7 +21,7 @@ services:
     override: replace
     summary: "contour service"
     startup: enabled
-    command: "/contour [ -h ]"
+    command: "contour [ -h ]"
     on-failure: shutdown
 
 entrypoint-service: contour
@@ -39,5 +39,6 @@ parts:
       - go/1.21/stable
     override-build: |
       make build 
-      cp contour ${CRAFT_PART_INSTALL}/contour
+      mkdir ${CRAFT_PART_INSTALL}/bin
+      cp contour ${CRAFT_PART_INSTALL}/bin/contour
 
