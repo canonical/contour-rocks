@@ -34,11 +34,11 @@ parts:
     source-type: git
     source-tag: v1.28.2
     source-depth: 1
-
+    stage-packages:
+      - procps
     build-snaps:
       - go/1.21/stable
     override-build: |
       make build 
-      mkdir ${CRAFT_PART_INSTALL}/bin
       cp contour ${CRAFT_PART_INSTALL}/bin/contour
 
