@@ -24,7 +24,7 @@ LOG = logging.getLogger(__name__)
 
 
 def test_integration_contour(module_instance: harness.Instance):
-    image_name_env_variable = "ROCK_CONTOUR"
+    image_name_env_variable = "ROCK_CONTOUR_V1_28_2"
 
     image_uri = os.getenv(image_name_env_variable)
     assert image_uri is not None, f"{image_name_env_variable} is not set"
